@@ -31,15 +31,17 @@ export class InitiativeService {
   //Constructor
   constructor(private http: HttpClient) {}
 
-  postInitiative(initiative: {
-    createdBy: number;
-    title: string;
-    description: string;
-  }) {
+  postInitiative(
+    initiative: {
+      createdBy: number;
+      title: string;
+      description: string;
+    },
+    userId: number
+  ) {
     this.http
       .post(this.initiativePostUrl, {
-        // Pass the current user id instead of hard coding
-        createdBy: 18173376,
+        createdBy: userId,
         title: initiative.title,
         description: initiative.description,
       })

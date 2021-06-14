@@ -9,33 +9,24 @@
         <mat-label>Title</mat-label>
         <!-- test this with full width class -->
         <input matInput formControlName="title" />
-        <mat-error
-          *ngIf="initiativeForm.controls['title'].hasError('required')"
-        >
+        <mat-error *ngIf="initiativeForm.controls['title'].hasError('required')">
           Title is <strong>required</strong>
         </mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Description</mat-label>
         <textarea rows="15" matInput formControlName="description"> </textarea>
-        <mat-error
-          *ngIf="initiativeForm.controls['description'].hasError('required')"
-        >
+        <mat-error *ngIf="initiativeForm.controls['description'].hasError('required')">
           Description is <strong>required</strong>
         </mat-error>
       </mat-form-field>
 
       <!-- need to style this... why is it blue?-->
       <div class="flex-container alignment">
-        <button
-          mat-raised-button
-          color="primary"
-          type="submit"
-          [disabled]="!initiativeForm.valid"
-        >
+        <button mat-raised-button color="primary" type="submit" [disabled]="!initiativeForm.valid">
           Submit
         </button>
-        <button mat-raised-button (click)="onCancel()">Cancel</button>
+        <button mat-raised-button (click)="onCancel()" type="button">Cancel</button>
       </div>
     </div>
   </form>

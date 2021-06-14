@@ -16,6 +16,7 @@ import { AllInitiativeDataSource } from './all-initiative-datasource';
 })
 export class AllInitiativeComponent implements OnInit {
   initiatives: Initiative[];
+  //user: User;
 
   dataSource: AllInitiativeDataSource;
 
@@ -31,14 +32,16 @@ export class AllInitiativeComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new AllInitiativeDataSource(this.initiativeService);
     this.dataSource.loadInitiatives();
+    //this.user = this.initiativeService.getUser
   }
 
   openAddInitiativeDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.height = '55vh';
-    dialogConfig.minHeight = '800px';
+    //dialogConfig.minHeight = '800px';
     dialogConfig.width = '55vw';
+    //dialogConfig.data = this.user;
 
     const dialogRef = this.addInitiativeDialog.open(
       NewInitiativeFormComponent,

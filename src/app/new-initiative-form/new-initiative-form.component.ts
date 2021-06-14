@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { InitiativeService } from '../services/initiative.service';
 import { InitiativeDTO } from '../model/initiativeDTO';
 import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-initiative-form',
@@ -22,7 +22,7 @@ export class NewInitiativeFormComponent {
   constructor(
     private fb: FormBuilder,
     private initiativeService: InitiativeService,
-    public dialogRef: MatDialogRef<NewInitiativeFormComponent>
+    public dialogRef: MatDialogRef<NewInitiativeFormComponent> //@Inject(MAT_DIALOG_DATA) public user: User
   ) {}
 
   onCancel() {

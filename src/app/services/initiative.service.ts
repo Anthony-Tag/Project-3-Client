@@ -38,7 +38,8 @@ export class InitiativeService {
   }) {
     this.http
       .post(this.initiativePostUrl, {
-        createdBy: 56387421,
+        // Pass the current user id instead of hard coding
+        createdBy: 18173376,
         title: initiative.title,
         description: initiative.description,
       })

@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private authorizeEndpoint = '/oauth2/authorization/github';
   private tokenEndpoint = '/login/oauth2/code/github';
-  private baseUrl = environment.baseUrl;
+  private baseUrl = 'http://localhost:4200';
   private tokenKey = 'token';
 
   constructor(private http: HttpClient) {}
